@@ -1,0 +1,29 @@
+this is not proper steps watch dennis ivy youtube channel video named:
+ photo album app with django and s3 bucket(1.46.58hr)
+
+upload images to AWS:
+
+1) goto website and search for s3
+2) then create bucket enter names and region
+3) now goto that bucket
+4) Add bucket policy
+this is policy:
+{
+    "Version": "2008-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowPublicRead",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::your-bucket-name/*"
+        }
+    ]
+}
+
+5) goto services and search for IAM user and create new user it will access bucket
+6) and add Access key secret key in settings.py
+7) pip install boto3 django-storages
+8) goto documentation of django-storages
